@@ -1,0 +1,22 @@
+{% extends "base.tmpl" %}
+{% load editorjs_tags %}
+
+{% block content %}
+    {% for post in object_list %}
+
+    <article>
+        <h1>{{ post.title }}</h1>
+        <hr>
+        <div>
+            <a href="{% url 'posts:detail_view' post.slug %}">Читать далее</a>
+        </div>
+    </article>
+
+    {% empty %}
+
+    <article>
+        Вы не добавили ни одной записи
+    </article>
+
+    {% endfor %}
+{% endblock %}

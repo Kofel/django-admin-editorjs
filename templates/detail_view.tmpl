@@ -1,0 +1,12 @@
+{% extends "base.tmpl" %}
+{% load editorjs_tags %}
+
+{% block content %}
+    <article>
+        <h1 class="mb-4">{{ post.title }}</h1>
+        
+        <div class="article-content">
+            {{ post.content|render_editorjs }}
+        </div>
+    </article>
+{% endblock %}
